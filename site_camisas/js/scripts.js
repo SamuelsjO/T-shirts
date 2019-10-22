@@ -130,7 +130,21 @@ $(function(){
          var categoria = $(this).parent().attr("id");
          parametros_pesquisa[categoria] = $(this).attr("id");
          atualizar_orçamento(parametros_pesquisa);
-    })
+    });
+
+    $("select").change(function(){
+        var paramentro_select = $(this).attr('id');
+        parametros_pesquisa[paramentro_select] = $(this).val();
+        atualizar_orçamento(parametros_pesquisa);
+
+    });
+
+    $('#quantidade').change(function(){
+
+        var paramentro_input = $(this).attr('id');
+        parametros_pesquisa[paramentro_input] = $(this).val();
+        atualizar_orçamento(parametros_pesquisa);
+    });
     //ao carregar a pagina 
 
     //verificar logalStorage e atualizar a variavel parametros
